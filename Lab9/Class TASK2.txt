@@ -1,0 +1,43 @@
+TASK 3 
+ 2 +  import java.util.Scanner; 
+ 3 +   interface Calculator  
+ 4 +  { 
+ 5 +  public long power(int n,int p) ;   //abstract method of the interface calculator that needs to be implemented 
+ 6 +  } 
+ 7 +  class MyCalculator extends Exception implements Calculator  
+ 8 +  { 
+ 9 +  public long power(int n,int p)  
+ 10 +  	{ 
+ 11 +  		long result=1; 
+ 12 +  	for(int i=1;i<=p;i++) 
+ 13 +  		{ 
+ 14 +  		result=result*n; 
+ 15 +  		} 
+ 16 +  		return result; 
+ 17 +  	} 
+ 18 +  } 
+ 19 +  class MyCalculatorDemo 
+ 20 +  { 
+ 21 +  public static void main(String args[]) 
+ 22 +  	{ 
+ 23 +  		Scanner sc=new Scanner(System.in); 
+ 24 +  	MyCalculator c=new MyCalculator(); 
+ 25 +  	try{ 
+ 26 +  		System.out.print("enter 1st number= "); 
+ 27 +  		int n=sc.nextInt(); 
+ 28 +  		System.out.print("enter 2nd number= "); 
+ 29 +  		int p=sc.nextInt(); 
+ 30 +  		if(n<0 || p<0 || n==0 || p==0) 
+ 31 +  		{ 
+ 32 +  			throw new Exception("THE N OR P CANT BE NEGATIVE or 0 "); 
+ 33 +  		} 
+ 34 +  		else 
+ 35 +  		System.out.println("the number is= "+c.power(n,p)); 
+ 36 +  	} 
+ 37 +  		catch(Exception i) 
+ 38 +  		{ 
+ 39 +  			System.out.println("THE N OR P CAN NEITHER BE NEGATIVE OR 0"); 
+ 40 +  		} 
+ 41 +  	} 
+ 42 +  }   
+
